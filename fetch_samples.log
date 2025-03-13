@@ -1,0 +1,396 @@
+2025-03-13 10:44:47,210 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 10:44:47,212 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 10:44:47,213 - fetch_samples - INFO - 测试模式：只爬取网站 csdn
+2025-03-13 10:44:47,213 - fetch_samples - INFO - 已设置每个网站最大爬取文章数为 5
+2025-03-13 10:44:47,213 - fetch_samples - INFO - 开始批量爬取 1 个网站的文章...
+2025-03-13 10:44:47,214 - fetch_samples - INFO - 开始爬取网站 csdn (URL: https://blog.csdn.net/nav/python)
+2025-03-13 10:44:47,216 - spider - INFO - 爬虫初始化完成: https://blog.csdn.net/nav/python, 线程数: 5, 最大文章数: 5, 使用代理: False
+2025-03-13 10:44:47,217 - spider - ERROR - 爬取过程中发生错误: 'ArticleSpider' object has no attribute 'website'
+Traceback (most recent call last):
+  File "E:\cursor\202503+\爬取接单\spider\spider.py", line 564, in crawl
+    return self.crawl_multi_thread()
+  File "E:\cursor\202503+\爬取接单\spider\spider.py", line 620, in crawl_multi_thread
+    logger.info(f"开始爬取 {self.website}: {self.base_url}")
+AttributeError: 'ArticleSpider' object has no attribute 'website'
+2025-03-13 10:44:47,221 - fetch_samples - ERROR - 爬取 csdn 失败: 'ArticleSpider' object has no attribute 'save_articles_to_csv'
+2025-03-13 10:44:47,222 - fetch_samples - ERROR - 爬取网站 csdn 失败: 'ArticleSpider' object has no attribute 'save_articles_to_csv'
+2025-03-13 10:44:47,227 - fetch_samples - INFO - 爬取结果统计已保存到 data/article_samples\fetch_results.json
+2025-03-13 10:44:47,228 - fetch_samples - INFO - 批量爬取完成，共获取 0 篇文章，耗时 0.01 秒
+2025-03-13 10:44:47,229 - fetch_samples - WARNING - 没有找到任何文章样本可合并
+2025-03-13 10:46:45,628 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 10:46:45,629 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 10:46:45,629 - fetch_samples - INFO - 测试模式：只爬取网站 zhihu
+2025-03-13 10:46:45,630 - fetch_samples - INFO - 已设置每个网站最大爬取文章数为 5
+2025-03-13 10:46:45,630 - fetch_samples - INFO - 开始批量爬取 1 个网站的文章...
+2025-03-13 10:46:45,630 - fetch_samples - INFO - 开始爬取网站 zhihu (URL: https://www.zhihu.com/column/c_1261435532773801984)
+2025-03-13 10:46:45,632 - spider - INFO - 爬虫初始化完成: https://www.zhihu.com/column/c_1261435532773801984, 线程数: 5, 最大文章数: 5, 使用代理: False
+2025-03-13 10:46:45,633 - spider - INFO - 开始爬取 zhihu: https://www.zhihu.com/column/c_1261435532773801984
+2025-03-13 10:46:45,635 - spider - INFO - 从列表页面收集文章链接: https://www.zhihu.com/column/c_1261435532773801984
+2025-03-13 10:46:46,119 - spider - INFO - 从列表页 https://www.zhihu.com/column/c_1261435532773801984 收集到 0 个文章链接
+2025-03-13 10:46:46,119 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://www.zhihu.com/column/c_1261435532773801984
+2025-03-13 10:46:47,646 - spider - INFO - 没有文章需要保存
+2025-03-13 10:46:47,646 - spider - INFO - 爬取完成，共获取 0 篇文章，耗时 2.01 秒
+2025-03-13 10:46:47,646 - fetch_samples - ERROR - 爬取 zhihu 失败: 'ArticleSpider' object has no attribute 'save_articles_to_csv'
+2025-03-13 10:46:47,647 - fetch_samples - ERROR - 爬取网站 zhihu 失败: 'ArticleSpider' object has no attribute 'save_articles_to_csv'
+2025-03-13 10:46:47,650 - fetch_samples - INFO - 爬取结果统计已保存到 data/article_samples\fetch_results.json
+2025-03-13 10:46:47,651 - fetch_samples - INFO - 批量爬取完成，共获取 0 篇文章，耗时 2.02 秒
+2025-03-13 10:46:47,651 - fetch_samples - WARNING - 没有找到任何文章样本可合并
+2025-03-13 10:48:54,753 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 10:48:54,754 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 10:48:54,755 - fetch_samples - INFO - 测试模式：只爬取网站 general
+2025-03-13 10:48:54,755 - fetch_samples - INFO - 已设置每个网站最大爬取文章数为 5
+2025-03-13 10:48:54,755 - fetch_samples - INFO - 开始批量爬取 1 个网站的文章...
+2025-03-13 10:48:54,755 - fetch_samples - INFO - 开始爬取网站 general (URL: https://www.36kr.com/)
+2025-03-13 10:48:54,756 - parser - INFO - 为网站 'general' 创建解析器: GeneralParser
+2025-03-13 10:48:54,757 - spider - INFO - 爬虫初始化完成: https://www.36kr.com/, 线程数: 5, 最大文章数: 5, 使用代理: False
+2025-03-13 10:48:54,759 - spider - INFO - 开始爬取 general: https://www.36kr.com/
+2025-03-13 10:48:54,761 - spider - INFO - 从列表页面收集文章链接: https://www.36kr.com/
+2025-03-13 10:48:55,463 - parser - INFO - 从页面提取到 56 个可能的文章链接
+2025-03-13 10:48:55,465 - spider - INFO - 从列表页 https://www.36kr.com/ 收集到 53 个文章链接
+2025-03-13 10:48:55,465 - spider - WARNING - 文章队列已满，停止添加
+2025-03-13 10:48:55,465 - spider - INFO - 已收集足够的文章URL: 100
+2025-03-13 10:48:58,178 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/2492318105786505
+2025-03-13 10:48:58,453 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203107444678920
+2025-03-13 10:48:58,553 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203961805857029
+2025-03-13 10:48:59,994 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203251440771592
+2025-03-13 10:49:00,652 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203081195446533
+2025-03-13 10:49:01,995 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3191826687254921
+2025-03-13 10:49:02,696 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3173373948609416
+2025-03-13 10:49:03,809 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3162919288515333
+2025-03-13 10:49:05,034 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3133663375677955
+2025-03-13 10:49:05,115 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204074106609920
+2025-03-13 10:49:05,454 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203415047611908
+2025-03-13 10:49:06,516 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203950805558537
+2025-03-13 10:49:06,560 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203393151000833
+2025-03-13 10:49:07,699 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203354335519235
+2025-03-13 10:49:07,931 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203258249519624
+2025-03-13 10:49:08,808 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204041964364039
+2025-03-13 10:49:08,819 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204048321847816
+2025-03-13 10:49:09,182 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203389721289993
+2025-03-13 10:49:09,361 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203373809853960
+2025-03-13 10:49:10,111 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203361190027783
+2025-03-13 10:49:10,225 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203331999081737
+2025-03-13 10:49:10,452 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203366023143936
+2025-03-13 10:49:11,476 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3201367123623556
+2025-03-13 10:49:11,700 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203332173931008
+2025-03-13 10:49:11,901 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203351036125702
+2025-03-13 10:49:12,567 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203992336753160
+2025-03-13 10:49:13,259 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203994991796743
+2025-03-13 10:49:13,658 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204003937117447
+2025-03-13 10:49:14,532 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3201630124457607
+2025-03-13 10:49:14,824 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203988852662534
+2025-03-13 10:49:16,061 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203993081799173
+2025-03-13 10:49:16,857 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203998849212678
+2025-03-13 10:49:17,501 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204001201594889
+2025-03-13 10:49:18,922 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203984913916169
+2025-03-13 10:49:20,221 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203924734075397
+2025-03-13 10:49:20,249 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203325257769480
+2025-03-13 10:49:21,267 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930862477832
+2025-03-13 10:49:22,054 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930568286470
+2025-03-13 10:49:22,297 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930477830664
+2025-03-13 10:49:22,596 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930980786696
+2025-03-13 10:49:23,215 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203931309613313
+2025-03-13 10:49:23,302 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203939465142788
+2025-03-13 10:49:23,695 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203947238531334
+2025-03-13 10:49:23,852 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203901512065542
+2025-03-13 10:49:24,219 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203912878892552
+2025-03-13 10:49:24,876 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3055748106488968
+2025-03-13 10:49:25,649 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202884614825216
+2025-03-13 10:49:26,303 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202671697289737
+2025-03-13 10:49:26,429 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203927052984838
+2025-03-13 10:49:27,153 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202573446586883
+2025-03-13 10:49:27,708 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202957496624646
+2025-03-13 10:49:27,804 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202669940220166
+2025-03-13 10:49:27,816 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202761721340161
+2025-03-13 10:49:28,897 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/2492318105786505
+2025-03-13 10:49:29,354 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203107444678920
+2025-03-13 10:49:30,152 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203961805857029
+2025-03-13 10:49:31,174 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203251440771592
+2025-03-13 10:49:31,577 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203081195446533
+2025-03-13 10:49:32,210 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3191826687254921
+2025-03-13 10:49:32,258 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3173373948609416
+2025-03-13 10:49:32,275 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3162919288515333
+2025-03-13 10:49:33,422 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3133663375677955
+2025-03-13 10:49:33,705 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204074106609920
+2025-03-13 10:49:34,101 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203415047611908
+2025-03-13 10:49:34,721 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203393151000833
+2025-03-13 10:49:35,217 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203950805558537
+2025-03-13 10:49:35,763 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203354335519235
+2025-03-13 10:49:36,606 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203258249519624
+2025-03-13 10:49:36,950 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204048321847816
+2025-03-13 10:49:37,701 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204041964364039
+2025-03-13 10:49:38,766 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203389721289993
+2025-03-13 10:49:40,061 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203373809853960
+2025-03-13 10:49:41,040 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203361190027783
+2025-03-13 10:49:41,984 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203331999081737
+2025-03-13 10:49:43,271 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203366023143936
+2025-03-13 10:49:44,211 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3201367123623556
+2025-03-13 10:49:45,422 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203332173931008
+2025-03-13 10:49:46,190 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203351036125702
+2025-03-13 10:49:46,886 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203992336753160
+2025-03-13 10:49:48,229 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203994991796743
+2025-03-13 10:49:48,937 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204003937117447
+2025-03-13 10:49:49,570 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3201630124457607
+2025-03-13 10:49:49,979 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203988852662534
+2025-03-13 10:49:50,013 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203993081799173
+2025-03-13 10:49:50,702 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203998849212678
+2025-03-13 10:49:52,179 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3204001201594889
+2025-03-13 10:49:52,841 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203984913916169
+2025-03-13 10:49:53,074 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203325257769480
+2025-03-13 10:49:53,874 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203924734075397
+2025-03-13 10:49:54,216 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930862477832
+2025-03-13 10:49:55,611 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930568286470
+2025-03-13 10:49:56,966 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930477830664
+2025-03-13 10:49:58,094 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203930980786696
+2025-03-13 10:49:58,987 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203931309613313
+2025-03-13 10:50:00,228 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203939465142788
+2025-03-13 10:50:00,849 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203947238531334
+2025-03-13 10:50:01,373 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203901512065542
+2025-03-13 10:50:02,487 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3203912878892552
+2025-03-13 10:50:02,580 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3055748106488968
+2025-03-13 10:50:02,657 - parser - WARNING - 无法提取到有效内容: https://www.36kr.com/p/3202884614825216
+2025-03-13 10:50:02,661 - spider - INFO - 没有文章需要保存
+2025-03-13 10:50:02,661 - spider - INFO - 爬取完成，共获取 0 篇文章，耗时 67.90 秒
+2025-03-13 10:50:02,662 - spider - INFO - 没有文章需要保存
+2025-03-13 10:50:02,668 - spider - INFO - 已保存 53 个已访问URL
+2025-03-13 10:50:02,669 - fetch_samples - WARNING - 没有文章需要保存到 data/article_samples\general\general_articles.csv
+2025-03-13 10:50:02,669 - fetch_samples - INFO - 成功从 general 爬取 0 篇文章
+2025-03-13 10:50:02,671 - fetch_samples - INFO - 爬取结果统计已保存到 data/article_samples\fetch_results.json
+2025-03-13 10:50:02,671 - fetch_samples - INFO - 批量爬取完成，共获取 0 篇文章，耗时 67.92 秒
+2025-03-13 10:50:02,672 - fetch_samples - WARNING - 没有找到任何文章样本可合并
+2025-03-13 10:52:38,198 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 10:52:38,199 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 10:52:38,199 - fetch_samples - INFO - 测试模式：只爬取网站 csdn
+2025-03-13 10:52:38,200 - fetch_samples - INFO - 已设置每个网站最大爬取文章数为 5
+2025-03-13 10:52:38,200 - fetch_samples - INFO - 开始批量爬取 1 个网站的文章...
+2025-03-13 10:52:38,200 - fetch_samples - INFO - 开始爬取网站 csdn (URL: https://blog.csdn.net/nav/python)
+2025-03-13 10:52:38,201 - spider - INFO - 爬虫初始化完成: https://blog.csdn.net/nav/python, 线程数: 3, 最大文章数: 5, 使用代理: False
+2025-03-13 10:52:38,203 - spider - INFO - 开始爬取 csdn: https://blog.csdn.net/nav/python
+2025-03-13 10:52:38,207 - spider - INFO - 从列表页面收集文章链接: https://blog.csdn.net/nav/python
+2025-03-13 10:52:39,049 - spider - INFO - 从列表页 https://blog.csdn.net/nav/python 收集到 0 个文章链接
+2025-03-13 10:52:39,050 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://blog.csdn.net/nav/python
+2025-03-13 10:52:40,223 - spider - INFO - 没有文章需要保存
+2025-03-13 10:52:40,223 - spider - INFO - 爬取完成，共获取 0 篇文章，耗时 2.02 秒
+2025-03-13 10:52:40,223 - spider - INFO - 没有文章需要保存
+2025-03-13 10:52:40,225 - spider - INFO - 已保存 0 个已访问URL
+2025-03-13 10:52:40,225 - fetch_samples - WARNING - 没有文章需要保存到 data/article_samples\csdn\csdn_articles.csv
+2025-03-13 10:52:40,226 - fetch_samples - INFO - 成功从 csdn 爬取 0 篇文章
+2025-03-13 10:52:40,227 - fetch_samples - INFO - 爬取结果统计已保存到 data/article_samples\fetch_results.json
+2025-03-13 10:52:40,228 - fetch_samples - INFO - 批量爬取完成，共获取 0 篇文章，耗时 2.03 秒
+2025-03-13 10:52:40,228 - fetch_samples - WARNING - 没有找到任何文章样本可合并
+2025-03-13 10:53:42,866 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 10:53:42,868 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 10:53:42,868 - fetch_samples - INFO - 测试模式：只爬取网站 general
+2025-03-13 10:53:42,868 - fetch_samples - INFO - 已设置每个网站最大爬取文章数为 5
+2025-03-13 10:53:42,869 - fetch_samples - INFO - 开始批量爬取 1 个网站的文章...
+2025-03-13 10:53:42,869 - fetch_samples - INFO - 开始爬取网站 general (URL: https://www.cnblogs.com/pick/)
+2025-03-13 10:53:42,870 - parser - INFO - 为网站 'general' 创建解析器: GeneralParser
+2025-03-13 10:53:42,873 - spider - INFO - 从记录中加载 53 个已访问URL
+2025-03-13 10:53:42,874 - spider - INFO - 爬虫初始化完成: https://www.cnblogs.com/pick/, 线程数: 3, 最大文章数: 5, 使用代理: False
+2025-03-13 10:53:42,874 - spider - INFO - 开始爬取 general: https://www.cnblogs.com/pick/
+2025-03-13 10:53:42,876 - spider - INFO - 从列表页面收集文章链接: https://www.cnblogs.com/pick/
+2025-03-13 10:53:43,301 - parser - INFO - 从页面提取到 41 个可能的文章链接
+2025-03-13 10:53:43,303 - spider - INFO - 从列表页 https://www.cnblogs.com/pick/ 收集到 39 个文章链接
+2025-03-13 10:53:45,317 - spider - INFO - 从列表页面收集文章链接: https://www.cnblogs.com/pick//page/2
+2025-03-13 10:53:45,697 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 10:53:48,944 - parser - WARNING - 无法提取到有效内容: https://www.cnblogs.com/skins.aspx
+2025-03-13 10:53:50,081 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 10:53:56,677 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 10:54:04,693 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://www.cnblogs.com/pick//page/2
+2025-03-13 10:54:33,846 - parser - WARNING - 无法提取到有效内容: https://www.cnblogs.com/skins.aspx
+2025-03-13 10:54:44,788 - spider - WARNING - 请求异常: https://www.cnblogs.com/rossiXYZ/p/18705809, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /rossiXYZ/p/18705809 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:46,294 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:47,748 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:48,826 - spider - WARNING - 请求异常: https://www.cnblogs.com/rossiXYZ/p/18705809, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /rossiXYZ/p/18705809 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:50,352 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:51,797 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:54,858 - spider - WARNING - 请求异常: https://www.cnblogs.com/rossiXYZ/p/18705809, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /rossiXYZ/p/18705809 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:56,386 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:54:57,868 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18700127, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18700127 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:02,906 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:04,457 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:05,910 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:06,946 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:08,523 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:09,941 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:11,010 - spider - INFO - 已将 10 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:55:11,011 - spider - INFO - 已获取 10/5 篇文章
+2025-03-13 10:55:11,019 - spider - INFO - 已将 20 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:55:11,019 - spider - INFO - 已获取 20/5 篇文章
+2025-03-13 10:55:11,027 - spider - INFO - 已将 30 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:55:11,027 - spider - INFO - 已获取 30/5 篇文章
+2025-03-13 10:55:11,039 - spider - INFO - 已将 40 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:55:11,039 - spider - INFO - 已获取 40/5 篇文章
+2025-03-13 10:55:11,050 - spider - INFO - 已将 50 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:55:11,051 - spider - INFO - 已获取 50/5 篇文章
+2025-03-13 10:55:12,981 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:14,575 - spider - WARNING - 请求异常: https://www.cnblogs.com/jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /jyzhao/p/18700202/shou-ba-shou-jiao-ni-bu-shu-deepseek-ben-de-mo-xin (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:15,980 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:21,042 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:22,622 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:24,008 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:25,103 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:26,711 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:28,044 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:31,134 - spider - WARNING - 请求异常: https://www.cnblogs.com/coco1s/p/18699898, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /coco1s/p/18699898 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:32,786 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:34,149 - spider - WARNING - 请求异常: https://www.cnblogs.com/hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /hez2010/p/18696074/brainfly-brainfuck-compiler-built-with-csharp (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:39,173 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:40,874 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:42,182 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:43,199 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:44,912 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:46,219 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:49,238 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:50,959 - spider - WARNING - 请求异常: https://www.cnblogs.com/lemondu/p/18652339, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /lemondu/p/18652339 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:52,261 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:57,328 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:55:59,014 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:00,312 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:01,533 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:03,113 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:04,351 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:07,587 - spider - WARNING - 请求异常: https://www.cnblogs.com/onecainiao/p/18353586, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /onecainiao/p/18353586 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:09,150 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:10,375 - spider - WARNING - 请求异常: https://www.cnblogs.com/thisiswhy/p/18302939, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /thisiswhy/p/18302939 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:15,622 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:17,186 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:18,407 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:19,679 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:21,224 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:22,452 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:25,759 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:27,540 - spider - WARNING - 请求异常: https://www.cnblogs.com/apocelipes/p/18281363, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /apocelipes/p/18281363 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:28,493 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:33,809 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:35,586 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:36,525 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:37,842 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:39,637 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:40,568 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:43,868 - spider - WARNING - 请求异常: https://www.cnblogs.com/fanzhidongyzby/p/18075179/langchain, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /fanzhidongyzby/p/18075179/langchain (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:45,669 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:46,598 - spider - WARNING - 请求异常: https://www.cnblogs.com/whuanle/p/18045341, 错误: HTTPSConnectionPool(host='www.cnblogs.com', port=443): Max retries exceeded with url: /whuanle/p/18045341 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+2025-03-13 10:56:54,633 - spider - INFO - 已将 55 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:56:54,636 - spider - INFO - 爬取完成，共获取 55 篇文章，耗时 191.76 秒
+2025-03-13 10:56:54,657 - spider - INFO - 已将 55 篇文章保存到 data/article_samples\general\articles.csv
+2025-03-13 10:56:54,665 - spider - INFO - 已保存 23 个已访问URL
+2025-03-13 10:56:54,738 - fetch_samples - INFO - 成功保存 55 篇文章到 data/article_samples\general\general_articles.csv
+2025-03-13 10:56:54,743 - fetch_samples - INFO - 成功从 general 爬取 55 篇文章
+2025-03-13 10:56:54,746 - fetch_samples - INFO - 爬取结果统计已保存到 data/article_samples\fetch_results.json
+2025-03-13 10:56:54,746 - fetch_samples - INFO - 批量爬取完成，共获取 55 篇文章，耗时 191.87 秒
+2025-03-13 10:56:54,799 - fetch_samples - INFO - 从 data/article_samples\general\general_articles.csv 加载了 55 篇文章
+2025-03-13 10:56:54,815 - fetch_samples - INFO - 成功合并 55 篇文章到 data/article_samples\all_articles.csv
+2025-03-13 11:41:58,874 - fetch_samples - INFO - 从 fetch_config.json 加载配置成功
+2025-03-13 11:41:58,876 - fetch_samples - INFO - 初始化文章爬取器，目标最少文章数: 100, 是否使用代理: False
+2025-03-13 11:41:58,877 - fetch_samples - INFO - 开始批量爬取 5 个网站的文章...
+2025-03-13 11:41:58,877 - fetch_samples - INFO - 开始爬取网站 douban_movie (URL: https://movie.douban.com/)
+2025-03-13 11:41:58,882 - spider - INFO - 爬虫初始化完成: https://movie.douban.com/, 线程数: 2, 最大文章数: 50, 使用代理: False
+2025-03-13 11:41:58,883 - spider - INFO - 开始爬取 douban_movie: https://movie.douban.com/
+2025-03-13 11:41:58,885 - spider - INFO - 从列表页面收集文章链接: https://movie.douban.com/
+2025-03-13 11:41:59,633 - parser - INFO - 从页面提取到 37 个可能的电影或影评链接
+2025-03-13 11:41:59,635 - spider - INFO - 从列表页 https://movie.douban.com/ 收集到 36 个文章链接
+2025-03-13 11:42:02,652 - spider - INFO - 从列表页面收集文章链接: https://movie.douban.com//page/2
+2025-03-13 11:42:03,054 - spider - WARNING - 获取页面失败: https://movie.douban.com//page/2, 状态码: 404
+2025-03-13 11:42:09,463 - spider - WARNING - 获取页面失败: https://movie.douban.com//page/2, 状态码: 404
+2025-03-13 11:42:19,236 - spider - WARNING - 获取页面失败: https://movie.douban.com//page/2, 状态码: 404
+2025-03-13 11:42:31,243 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://movie.douban.com//page/2
+2025-03-13 11:42:39,333 - parser - WARNING - 无法提取到有效内容: https://movie.douban.com/annual/2024/?fullscreen=1&dt_from=doubanmovie?from=gallery
+2025-03-13 11:43:35,063 - parser - WARNING - 无法提取到有效内容: https://movie.douban.com/annual/2024/?fullscreen=1&dt_from=doubanmovie?from=gallery
+2025-03-13 11:43:54,503 - spider - WARNING - 获取页面失败: https://movie.douban.com/subject/36177245/?from=showing, 状态码: 403
+2025-03-13 11:43:58,531 - spider - INFO - 已将 10 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,536 - spider - INFO - 已获取 10/50 篇文章
+2025-03-13 11:43:58,545 - spider - INFO - 已将 20 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,546 - spider - INFO - 已获取 20/50 篇文章
+2025-03-13 11:43:58,562 - spider - INFO - 已将 30 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,563 - spider - INFO - 已获取 30/50 篇文章
+2025-03-13 11:43:58,581 - spider - INFO - 已将 40 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,583 - spider - INFO - 已获取 40/50 篇文章
+2025-03-13 11:43:58,606 - spider - INFO - 已将 50 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,606 - spider - INFO - 已获取 50/50 篇文章
+2025-03-13 11:43:58,721 - spider - WARNING - 获取页面失败: https://movie.douban.com/subject/36909229/?from=showing, 状态码: 403
+2025-03-13 11:43:58,730 - spider - INFO - 已将 60 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:43:58,731 - spider - INFO - 已获取 60/50 篇文章
+2025-03-13 11:44:02,495 - spider - WARNING - 获取页面失败: https://movie.douban.com/subject/37229788/?from=showing, 状态码: 403
+2025-03-13 11:44:09,191 - spider - WARNING - 获取页面失败: https://movie.douban.com/subject/37229788/?from=showing, 状态码: 403
+2025-03-13 11:44:18,964 - spider - WARNING - 获取页面失败: https://movie.douban.com/subject/37229788/?from=showing, 状态码: 403
+2025-03-13 11:44:30,993 - spider - INFO - 已将 69 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:44:30,995 - spider - INFO - 爬取完成，共获取 69 篇文章，耗时 152.11 秒
+2025-03-13 11:44:31,004 - spider - INFO - 已将 69 篇文章保存到 data/samples\douban_movie\articles.csv
+2025-03-13 11:44:31,009 - spider - INFO - 已保存 36 个已访问URL
+2025-03-13 11:44:31,045 - fetch_samples - INFO - 成功保存 69 篇文章到 data/samples\douban_movie\douban_movie_articles.csv
+2025-03-13 11:44:31,047 - fetch_samples - INFO - 成功从 douban_movie 爬取 69 篇文章
+2025-03-13 11:44:31,047 - fetch_samples - INFO - 开始爬取网站 csdn (URL: https://blog.csdn.net/qq_39435411/category_9983172.html)
+2025-03-13 11:44:31,050 - spider - INFO - 爬虫初始化完成: https://blog.csdn.net/qq_39435411/category_9983172.html, 线程数: 3, 最大文章数: 30, 使用代理: False
+2025-03-13 11:44:31,052 - spider - INFO - 开始爬取 csdn: https://blog.csdn.net/qq_39435411/category_9983172.html
+2025-03-13 11:44:31,054 - spider - INFO - 从列表页面收集文章链接: https://blog.csdn.net/qq_39435411/category_9983172.html
+2025-03-13 11:44:31,445 - spider - WARNING - 获取页面失败: https://blog.csdn.net/qq_39435411/category_9983172.html, 状态码: 404
+2025-03-13 11:44:33,062 - spider - INFO - 没有文章需要保存
+2025-03-13 11:44:33,063 - spider - INFO - 爬取完成，共获取 0 篇文章，耗时 2.01 秒
+2025-03-13 11:44:33,064 - spider - INFO - 没有文章需要保存
+2025-03-13 11:44:33,065 - spider - INFO - 已保存 0 个已访问URL
+2025-03-13 11:44:33,066 - fetch_samples - WARNING - 没有文章需要保存到 data/samples\csdn\csdn_articles.csv
+2025-03-13 11:44:33,068 - fetch_samples - INFO - 成功从 csdn 爬取 0 篇文章
+2025-03-13 11:44:33,069 - fetch_samples - INFO - 开始爬取网站 sina (URL: https://news.sina.com.cn/roll/)
+2025-03-13 11:44:33,072 - spider - INFO - 爬虫初始化完成: https://news.sina.com.cn/roll/, 线程数: 3, 最大文章数: 30, 使用代理: False
+2025-03-13 11:44:33,073 - spider - INFO - 开始爬取 sina: https://news.sina.com.cn/roll/
+2025-03-13 11:44:33,077 - spider - INFO - 从列表页面收集文章链接: https://news.sina.com.cn/roll/
+2025-03-13 11:44:33,399 - parser - INFO - 从新浪新闻页面提取到 1 个文章链接
+2025-03-13 11:44:33,400 - spider - INFO - 从列表页 https://news.sina.com.cn/roll/ 收集到 1 个文章链接
+2025-03-13 11:44:35,406 - spider - INFO - 从列表页面收集文章链接: https://news.sina.com.cn/roll//page/2
+2025-03-13 11:44:35,746 - spider - WARNING - 获取页面失败: https://news.sina.com.cn/roll//page/2, 状态码: 404
+2025-03-13 11:44:35,782 - spider - WARNING - 获取页面失败: https://blog.csdn.net/qq_39435411/category_9983172.html, 状态码: 404
+2025-03-13 11:44:39,111 - spider - INFO - 已将 2 篇文章保存到 data/samples\sina\articles.csv
+2025-03-13 11:44:39,112 - spider - INFO - 爬取完成，共获取 2 篇文章，耗时 6.04 秒
+2025-03-13 11:44:39,115 - spider - INFO - 已将 2 篇文章保存到 data/samples\sina\articles.csv
+2025-03-13 11:44:39,117 - spider - INFO - 已保存 1 个已访问URL
+2025-03-13 11:44:39,128 - fetch_samples - INFO - 成功保存 2 篇文章到 data/samples\sina\sina_articles.csv
+2025-03-13 11:44:39,129 - fetch_samples - INFO - 成功从 sina 爬取 2 篇文章
+2025-03-13 11:44:39,129 - fetch_samples - INFO - 开始爬取网站 general (URL: https://www.cnblogs.com/pick/)
+2025-03-13 11:44:39,131 - parser - INFO - 为网站 'general' 创建解析器: GeneralParser
+2025-03-13 11:44:39,132 - spider - INFO - 爬虫初始化完成: https://www.cnblogs.com/pick/, 线程数: 3, 最大文章数: 30, 使用代理: False
+2025-03-13 11:44:39,134 - spider - INFO - 开始爬取 general: https://www.cnblogs.com/pick/
+2025-03-13 11:44:39,135 - spider - INFO - 从列表页面收集文章链接: https://www.cnblogs.com/pick/
+2025-03-13 11:44:39,660 - parser - INFO - 从页面提取到 41 个可能的文章链接
+2025-03-13 11:44:39,663 - spider - INFO - 从列表页 https://www.cnblogs.com/pick/ 收集到 39 个文章链接
+2025-03-13 11:44:40,157 - spider - WARNING - 获取页面失败: https://news.sina.com.cn/roll//page/2, 状态码: 404
+2025-03-13 11:44:41,668 - spider - INFO - 从列表页面收集文章链接: https://www.cnblogs.com/pick//page/2
+2025-03-13 11:44:42,034 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 11:44:42,103 - spider - WARNING - 获取页面失败: https://blog.csdn.net/qq_39435411/category_9983172.html, 状态码: 404
+2025-03-13 11:44:44,859 - parser - WARNING - 无法提取到有效内容: https://www.cnblogs.com/skins.aspx
+2025-03-13 11:44:46,543 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 11:44:46,546 - spider - WARNING - 获取页面失败: https://news.sina.com.cn/roll//page/2, 状态码: 404
+2025-03-13 11:44:50,119 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://blog.csdn.net/qq_39435411/category_9983172.html
+2025-03-13 11:44:53,001 - spider - WARNING - 获取页面失败: https://www.cnblogs.com/pick//page/2, 状态码: 404
+2025-03-13 11:44:54,564 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://news.sina.com.cn/roll//page/2
+2025-03-13 11:45:01,021 - spider - WARNING - 未在列表页找到文章链接，可能已到达最后页或页面结构变化: https://www.cnblogs.com/pick//page/2
+2025-03-13 11:45:19,997 - parser - WARNING - 无法提取到有效内容: https://www.cnblogs.com/skins.aspx
+2025-03-13 11:45:54,025 - spider - INFO - 已将 10 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,026 - spider - INFO - 已获取 10/30 篇文章
+2025-03-13 11:45:54,036 - spider - INFO - 已将 20 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,036 - spider - INFO - 已获取 20/30 篇文章
+2025-03-13 11:45:54,051 - spider - INFO - 已将 30 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,052 - spider - INFO - 已获取 30/30 篇文章
+2025-03-13 11:45:54,066 - spider - INFO - 已将 40 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,067 - spider - INFO - 已获取 40/30 篇文章
+2025-03-13 11:45:54,083 - spider - INFO - 已将 50 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,084 - spider - INFO - 已获取 50/30 篇文章
+2025-03-13 11:45:54,102 - spider - INFO - 已将 60 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,102 - spider - INFO - 已获取 60/30 篇文章
+2025-03-13 11:45:54,120 - spider - INFO - 已将 70 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,121 - spider - INFO - 已获取 70/30 篇文章
+2025-03-13 11:45:54,414 - spider - INFO - 已将 76 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,415 - spider - INFO - 爬取完成，共获取 76 篇文章，耗时 75.28 秒
+2025-03-13 11:45:54,429 - spider - INFO - 已将 76 篇文章保存到 data/samples\general\articles.csv
+2025-03-13 11:45:54,430 - spider - INFO - 已保存 23 个已访问URL
+2025-03-13 11:45:54,446 - fetch_samples - INFO - 成功保存 76 篇文章到 data/samples\general\general_articles.csv
+2025-03-13 11:45:54,447 - fetch_samples - INFO - 成功从 general 爬取 76 篇文章
+2025-03-13 11:45:54,447 - fetch_samples - INFO - 已达到最低文章数要求 (100)，不再爬取其他网站
+2025-03-13 11:45:54,449 - fetch_samples - INFO - 爬取结果统计已保存到 data/samples\fetch_results.json
+2025-03-13 11:45:54,450 - fetch_samples - INFO - 批量爬取完成，共获取 147 篇文章，耗时 235.57 秒
+2025-03-13 11:45:54,468 - fetch_samples - INFO - 从 data/samples\douban_movie\douban_movie_articles.csv 加载了 69 篇文章
+2025-03-13 11:45:54,473 - fetch_samples - INFO - 从 data/samples\sina\sina_articles.csv 加载了 2 篇文章
+2025-03-13 11:45:54,494 - fetch_samples - INFO - 从 data/samples\general\general_articles.csv 加载了 76 篇文章
+2025-03-13 11:45:54,515 - fetch_samples - INFO - 从 data/samples\general\general_articles.csv 加载了 76 篇文章
+2025-03-13 11:45:54,551 - fetch_samples - INFO - 成功合并 223 篇文章到 data/samples\all_articles.csv
+2025-03-13 11:45:54,555 - fetch_samples - INFO - 已更新TODO.md，标记爬取任务为已完成

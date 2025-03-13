@@ -1,0 +1,16 @@
+{
+  "total_articles": 55,
+  "websites": {
+    "general": {
+      "status": "success",
+      "articles": 55,
+      "duration": 191.87188625335693,
+      "avg_time_per_article": 3.488579750061035,
+      "output_file": "data/article_samples\\general\\general_articles.csv"
+    }
+  },
+  "success_rate": 1.0,
+  "start_time": 1741834422.8694277,
+  "end_time": 1741834614.743315,
+  "duration": 191.87388730049133
+}

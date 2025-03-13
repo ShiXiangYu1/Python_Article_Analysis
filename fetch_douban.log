@@ -1,0 +1,143 @@
+2025-03-13 11:07:56,000 - douban_spider - INFO - 初始化豆瓣电影爬虫，目标爬取 50 部电影，每部电影 5 条影评
+2025-03-13 11:07:56,001 - douban_spider - INFO - 开始爬取豆瓣电影首页: https://movie.douban.com/
+2025-03-13 11:08:00,026 - parser - INFO - 从页面提取到 37 个可能的电影或影评链接
+2025-03-13 11:08:00,026 - douban_spider - INFO - 爬取Top250页面获取更多电影: https://movie.douban.com/top250
+2025-03-13 11:08:04,097 - parser - INFO - 从页面提取到 0 个可能的电影或影评链接
+2025-03-13 11:08:04,098 - douban_spider - INFO - 找到 33 个电影链接，准备爬取
+2025-03-13 11:08:04,102 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35364691/?from=showing
+2025-03-13 11:08:04,103 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35902857/?from=showing
+2025-03-13 11:08:06,958 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35364691/?from=showingreviews
+2025-03-13 11:08:09,220 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35902857/?from=showingreviews
+2025-03-13 11:08:11,863 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:11,863 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:11,864 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35288408/?from=showing
+2025-03-13 11:08:14,152 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:14,152 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:14,152 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36289423/?from=showing
+2025-03-13 11:08:16,927 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35288408/?from=showingreviews
+2025-03-13 11:08:19,332 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36289423/?from=showingreviews
+2025-03-13 11:08:21,318 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:21,318 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:21,319 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36909229/?from=showing
+2025-03-13 11:08:22,520 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:22,520 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:22,521 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36916003/?from=showing
+2025-03-13 11:08:27,314 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36909229/?from=showingreviews
+2025-03-13 11:08:27,799 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36916003/?from=showingreviews
+2025-03-13 11:08:31,133 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:31,133 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:31,134 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/37228529/?from=showing
+2025-03-13 11:08:32,980 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:32,980 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:32,980 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35682279/?from=showing
+2025-03-13 11:08:34,330 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/37228529/?from=showingreviews
+2025-03-13 11:08:38,566 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35682279/?from=showingreviews
+2025-03-13 11:08:39,429 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:39,429 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:39,430 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35863319/?from=showing
+2025-03-13 11:08:41,850 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:41,851 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:41,853 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35881314/?from=showing
+2025-03-13 11:08:44,041 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35863319/?from=showingreviews
+2025-03-13 11:08:45,908 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35881314/?from=showingreviews
+2025-03-13 11:08:48,228 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:48,229 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:48,230 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36623639/?from=showing
+2025-03-13 11:08:49,945 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:49,946 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:49,946 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/34780991/?from=showing
+2025-03-13 11:08:52,328 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36623639/?from=showingreviews
+2025-03-13 11:08:53,971 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/34780991/?from=showingreviews
+2025-03-13 11:08:56,629 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:56,630 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:56,633 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35443158/?from=showing
+2025-03-13 11:08:56,720 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:08:56,721 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:08:56,721 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/34879969/?from=showing
+2025-03-13 11:08:59,717 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/34879969/?from=showingreviews
+2025-03-13 11:09:00,525 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35443158/?from=showingreviews
+2025-03-13 11:09:05,057 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:05,057 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:05,058 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35815771/?from=showing
+2025-03-13 11:09:06,276 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:06,276 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:06,277 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/34429795/?from=showing
+2025-03-13 11:09:10,525 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35815771/?from=showingreviews
+2025-03-13 11:09:10,606 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/34429795/?from=showingreviews
+2025-03-13 11:09:14,317 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:14,318 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:14,318 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36282639/?from=showing
+2025-03-13 11:09:16,347 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:16,348 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:16,348 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35883131/?from=showing
+2025-03-13 11:09:17,521 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36282639/?from=showingreviews
+2025-03-13 11:09:20,798 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:20,798 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:20,799 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/30181250/?from=showing
+2025-03-13 11:09:21,897 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35883131/?from=showingreviews
+2025-03-13 11:09:24,078 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/30181250/?from=showingreviews
+2025-03-13 11:09:25,810 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:25,810 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:25,811 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36678379/?from=showing
+2025-03-13 11:09:29,792 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:29,793 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:29,794 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/37015096/?from=showing
+2025-03-13 11:09:30,770 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36678379/?from=showingreviews
+2025-03-13 11:09:32,533 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/37015096/?from=showingreviews
+2025-03-13 11:09:35,714 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:35,715 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:35,717 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35861791/?from=showing
+2025-03-13 11:09:36,263 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:36,263 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:36,264 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36445098/?from=showing
+2025-03-13 11:09:39,203 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36445098/?from=showingreviews
+2025-03-13 11:09:40,578 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35861791/?from=showingreviews
+2025-03-13 11:09:43,914 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:43,914 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:43,915 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36970301/?from=showing
+2025-03-13 11:09:45,681 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:45,682 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:45,682 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35296289/?from=showing
+2025-03-13 11:09:49,592 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36970301/?from=showingreviews
+2025-03-13 11:09:50,103 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35296289/?from=showingreviews
+2025-03-13 11:09:52,739 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:52,740 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:52,741 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/1291557/?from=showing
+2025-03-13 11:09:53,005 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:53,007 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:53,009 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35938713/?from=showing
+2025-03-13 11:09:57,039 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35938713/?from=showingreviews
+2025-03-13 11:09:58,103 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/1291557/?from=showingreviews
+2025-03-13 11:09:59,658 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:09:59,658 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:09:59,659 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36177245/?from=showing
+2025-03-13 11:10:00,855 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:00,856 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:00,856 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36464817/?from=showing
+2025-03-13 11:10:03,179 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36177245/?from=showingreviews
+2025-03-13 11:10:06,255 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36464817/?from=showingreviews
+2025-03-13 11:10:08,722 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:08,723 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:08,724 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36244425/?from=showing
+2025-03-13 11:10:11,938 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36244425/?from=showingreviews
+2025-03-13 11:10:12,036 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:12,037 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:12,037 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/37229788/?from=showing
+2025-03-13 11:10:15,842 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/37229788/?from=showingreviews
+2025-03-13 11:10:17,216 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:17,217 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:17,217 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/35603727/?from=showing
+2025-03-13 11:10:19,218 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:19,218 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:19,219 - douban_spider - INFO - 爬取电影: https://movie.douban.com/subject/36712987/?from=showing
+2025-03-13 11:10:22,355 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/35603727/?from=showingreviews
+2025-03-13 11:10:24,228 - douban_spider - INFO - 爬取影评列表: https://movie.douban.com/subject/36712987/?from=showingreviews
+2025-03-13 11:10:27,822 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:27,823 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:28,101 - douban_spider - INFO - 找到 0 条影评链接
+2025-03-13 11:10:28,101 - douban_spider - INFO - 成功爬取 0 条影评
+2025-03-13 11:10:28,132 - douban_spider - INFO - 已将 33 部电影信息保存到 data/douban\movies.csv
+2025-03-13 11:10:28,135 - douban_spider - INFO - 已将所有数据保存到 data/douban\douban_data.json
+2025-03-13 11:10:28,137 - douban_spider - INFO - 已保存 68 个已访问URL
+2025-03-13 11:10:28,138 - douban_spider - INFO - 爬取完成，共爬取 33 部电影和 0 条影评
+2025-03-13 11:10:28,138 - douban_spider - INFO - 总耗时: 152.14 秒

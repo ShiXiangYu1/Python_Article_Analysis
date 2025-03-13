@@ -1,0 +1,37 @@
+{
+  "total_articles": 147,
+  "websites": {
+    "douban_movie": {
+      "status": "success",
+      "articles": 69,
+      "duration": 152.16872906684875,
+      "avg_time_per_article": 2.2053438995195473,
+      "output_file": "data/samples\\douban_movie\\douban_movie_articles.csv"
+    },
+    "csdn": {
+      "status": "success",
+      "articles": 0,
+      "duration": 2.0178070068359375,
+      "avg_time_per_article": 2.0178070068359375,
+      "output_file": "data/samples\\csdn\\csdn_articles.csv"
+    },
+    "sina": {
+      "status": "success",
+      "articles": 2,
+      "duration": 6.0578343868255615,
+      "avg_time_per_article": 3.0289171934127808,
+      "output_file": "data/samples\\sina\\sina_articles.csv"
+    },
+    "general": {
+      "status": "success",
+      "articles": 76,
+      "duration": 75.31753039360046,
+      "avg_time_per_article": 0.9910201367579008,
+      "output_file": "data/samples\\general\\general_articles.csv"
+    }
+  },
+  "success_rate": 0.8,
+  "start_time": 1741837318.8770406,
+  "end_time": 1741837554.4489434,
+  "duration": 235.5719027519226
+}

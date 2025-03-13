@@ -1,0 +1,67 @@
+{
+  "websites": [
+    {
+      "name": "douban_movie",
+      "base_url": "https://movie.douban.com/",
+      "max_articles": 50,
+      "thread_count": 2,
+      "delay": 3.0,
+      "incremental": true
+    },
+    {
+      "name": "csdn",
+      "base_url": "https://blog.csdn.net/qq_39435411/category_9983172.html",
+      "max_articles": 30,
+      "thread_count": 3,
+      "delay": 2.0,
+      "incremental": true
+    },
+    {
+      "name": "sina",
+      "base_url": "https://news.sina.com.cn/roll/",
+      "max_articles": 30,
+      "thread_count": 3,
+      "delay": 2.0,
+      "incremental": true
+    },
+    {
+      "name": "general",
+      "base_url": "https://www.cnblogs.com/pick/",
+      "max_articles": 30,
+      "thread_count": 3,
+      "delay": 2.0,
+      "incremental": true
+    },
+    {
+      "name": "general",
+      "base_url": "https://www.ruanyifeng.com/blog/",
+      "max_articles": 30,
+      "thread_count": 3,
+      "delay": 2.0,
+      "incremental": true
+    }
+  ],
+  "global": {
+    "timeout": 15,
+    "max_retries": 3,
+    "delay": 1.5,
+    "proxy": {
+      "enabled": false,
+      "proxy_file": "proxies.json",
+      "max_workers": 5,
+      "check_interval": 600,
+      "fetch_interval": 3600,
+      "check_urls": [
+        "https://www.baidu.com",
+        "https://www.qq.com",
+        "https://www.sina.com.cn"
+      ],
+      "sources": [
+        "github",
+        "proxylist",
+        "free-proxy-list",
+        "cool-proxy"
+      ]
+    }
+  }
+} 

@@ -1,0 +1,52 @@
+{
+    "spider": {
+        "website": "sina",
+        "base_url": "https://news.sina.com.cn/",
+        "delay": 2.0,
+        "max_articles": 50,
+        "output_dir": "data",
+        "thread_count": 5,
+        "timeout": 10,
+        "max_retries": 3,
+        "incremental": true,
+        "use_proxy": false,
+        "proxy": {
+            "enabled": false,
+            "proxy_file": "proxies.json",
+            "check_interval": 600,
+            "fetch_interval": 3600,
+            "max_workers": 10,
+            "timeout": 5,
+            "check_urls": [
+                "https://www.baidu.com",
+                "https://www.qq.com",
+                "https://www.sina.com.cn"
+            ],
+            "sources": [
+                "github",
+                "proxylist",
+                "free-proxy-list",
+                "cool-proxy"
+            ]
+        }
+    },
+    "nlp": {
+        "segmenter": "jieba",
+        "pos_tagger": "jieba",
+        "keyword_extractor": "textrank",
+        "entity_extractor": "jieba",
+        "sentiment": "snownlp",
+        "relation": "textrank",
+        "use_stopwords": true,
+        "top_keywords": 5,
+        "use_java": false
+    },
+    "output": {
+        "csv_file": "articles.csv",
+        "json_file": "analysis_results.json",
+        "chart_dir": "charts",
+        "wordcloud": true,
+        "sentiment_chart": true,
+        "entity_chart": true
+    }
+} 
