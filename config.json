@@ -30,21 +30,66 @@
             ]
         }
     },
+    "websites": [
+        {
+            "name": "douban_movie",
+            "base_url": "https://movie.douban.com/",
+            "max_articles": 50,
+            "thread_count": 2,
+            "delay": 3.0,
+            "incremental": true
+        },
+        {
+            "name": "csdn",
+            "base_url": "https://blog.csdn.net/qq_39435411/category_9983172.html",
+            "max_articles": 30,
+            "thread_count": 3,
+            "delay": 2.0,
+            "incremental": true
+        },
+        {
+            "name": "sina",
+            "base_url": "https://news.sina.com.cn/roll/",
+            "max_articles": 30,
+            "thread_count": 3,
+            "delay": 2.0,
+            "incremental": true
+        },
+        {
+            "name": "general",
+            "base_url": "https://www.cnblogs.com/pick/",
+            "max_articles": 30,
+            "thread_count": 3,
+            "delay": 2.0,
+            "incremental": true
+        },
+        {
+            "name": "general",
+            "base_url": "https://www.ruanyifeng.com/blog/",
+            "max_articles": 30,
+            "thread_count": 3,
+            "delay": 2.0,
+            "incremental": true
+        }
+    ],
     "nlp": {
         "segmenter": "jieba",
         "pos_tagger": "jieba",
         "keyword_extractor": "textrank",
-        "entity_extractor": "jieba",
+        "entity_extractor": "simple",
         "sentiment": "snownlp",
-        "relation": "textrank",
+        "relation": "simple",
         "use_stopwords": true,
-        "top_keywords": 5,
-        "use_java": false
+        "top_keywords": 10,
+        "use_java": false,
+        "input_file": "data/samples/all_articles.csv",
+        "output_file": "data/samples/all_articles_analyzed.csv"
     },
     "output": {
         "csv_file": "articles.csv",
         "json_file": "analysis_results.json",
         "chart_dir": "charts",
+        "encoding": "utf-8-sig",
         "wordcloud": true,
         "sentiment_chart": true,
         "entity_chart": true
