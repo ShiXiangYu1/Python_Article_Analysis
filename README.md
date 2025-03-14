@@ -11,6 +11,10 @@
 - **NLP分析**：支持分词、关键词提取、实体识别、关系提取等多种NLP功能
 - **数据可视化**：提供Web界面展示爬取结果和分析数据
 
+## 快速上手
+
+如果您想快速开始使用本系统，请参考[快速上手指南](QUICK_START_GUIDE.md)，该指南提供了简明的步骤帮助您实现文章爬取、CSV格式存储以及可视化展示。
+
 ## 项目结构
 
 ```
@@ -46,7 +50,9 @@ project/
 ├── run_tests.py         # 测试运行脚本
 ├── config.json          # 配置文件
 ├── requirements.txt     # 依赖项
-└── README.md            # 说明文档
+├── README.md            # 说明文档
+├── QUICK_START_GUIDE.md # 快速上手指南
+└── USER_MANUAL.md       # 用户手册
 ```
 
 ## 安装与配置

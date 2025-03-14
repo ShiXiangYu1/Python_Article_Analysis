@@ -29,7 +29,7 @@ chart_config = {
 }
 
 # CSV数据文件路径
-DEFAULT_DATA_PATH = '../data/articles.csv'
+DEFAULT_DATA_PATH = '../data/samples/all_articles.csv'  # 修改为用户提供的路径
 
 
 def load_data(file_path: str = DEFAULT_DATA_PATH) -> pd.DataFrame:
@@ -64,7 +64,16 @@ def load_data(file_path: str = DEFAULT_DATA_PATH) -> pd.DataFrame:
             abs_path = alt_path
         else:
             print(f"错误: 替代路径也不存在: {alt_path}")
-            return pd.DataFrame()
+            
+            # 尝试直接使用用户提供的路径
+            user_path = 'E:/cursor/202503+/爬取接单/data/samples/all_articles.csv'
+            print(f"尝试用户提供的路径: {user_path}")
+            if os.path.exists(user_path):
+                print(f"找到文件在用户提供的路径: {user_path}")
+                abs_path = user_path
+            else:
+                print(f"错误: 用户提供的路径也不存在: {user_path}")
+                return pd.DataFrame()
     
     try:
         print(f"正在读取文件: {abs_path}")
@@ -806,45 +815,191 @@ def index():
     
     articles = []
     if not df.empty:
+        # 检查是否是电影数据
+        is_movie_data = 'movie_title' in df.columns or 'directors' in df.columns or 'actors' in df.columns
+        
         # 获取文章统计信息
         for _, row in df.iterrows():
-            article = {
-                'title': row.get('title', '未知标题'),
-                'author': row.get('author', '未知作者'),
-                'keywords': str(row.get('keywords', '')).split(',') if not pd.isna(row.get('keywords', '')) else [],
-                'url': row.get('url', '#')
-            }
-            
-            # 获取实体信息
-            entities = {}
-            if 'entities' in row and not pd.isna(row['entities']):
+            # 处理电影数据
+            if is_movie_data:
+                article = {
+                    'title': row.get('title', row.get('movie_title', '未知标题')),
+                    'author': row.get('author', '未知作者'),
+                    'url': row.get('url', row.get('movie_url', '#')),
+                    'content': row.get('content', '')
+                }
+                
+                # 提取电影特有信息作为实体
+                entities = {
+                    'person': [],
+                    'place': [],
+                    'organization': []
+                }
+                
+                # 导演作为人物实体
+                if 'directors' in row and not pd.isna(row['directors']):
+                    directors = str(row['directors']).split(',')
+                    entities['person'].extend([d.strip() for d in directors if d.strip()])
+                
+                # 演员作为人物实体
+                if 'actors' in row and not pd.isna(row['actors']):
+                    actors = str(row['actors']).split(',')
+                    entities['person'].extend([a.strip() for a in actors if a.strip()])
+                
+                # 电影类型作为组织实体
+                if 'genres' in row and not pd.isna(row['genres']):
+                    genres = str(row['genres']).split(',')
+                    entities['organization'].extend([g.strip() for g in genres if g.strip()])
+                
+                article['entities'] = entities
+                
+                # 创建电影相关的三元组
+                triples = []
+                
+                # 导演关系
+                if 'directors' in row and not pd.isna(row['directors']):
+                    directors = str(row['directors']).split(',')
+                    for director in directors:
+                        director = director.strip()
+                        if director:
+                            triples.append({
+                                'subject': director,
+                                'predicate': '导演',
+                                'object': article['title']
+                            })
+                
+                # 演员关系
+                if 'actors' in row and not pd.isna(row['actors']):
+                    actors = str(row['actors']).split(',')
+                    for actor in actors:
+                        actor = actor.strip()
+                        if actor:
+                            triples.append({
+                                'subject': actor,
+                                'predicate': '出演',
+                                'object': article['title']
+                            })
+                
+                # 类型关系
+                if 'genres' in row and not pd.isna(row['genres']):
+                    genres = str(row['genres']).split(',')
+                    for genre in genres:
+                        genre = genre.strip()
+                        if genre:
+                            triples.append({
+                                'subject': article['title'],
+                                'predicate': '属于',
+                                'object': genre
+                            })
+                
+                article['triples'] = triples
+                
+                # 计算实体和三元组数量
+                entity_count = sum(len(entities[key]) for key in entities)
+                stats['total_entities'] += entity_count
+                stats['total_triples'] += len(triples)
+            else:
+                # 处理普通文章数据
+                article = {
+                    'title': row.get('title', '未知标题'),
+                    'author': row.get('author', '未知作者'),
+                    'keywords': str(row.get('keywords', '')).split(',') if not pd.isna(row.get('keywords', '')) else [],
+                    'url': row.get('url', '#')
+                }
+                
+                # 获取实体信息
+                entities = {}
+                if 'entities' in row and not pd.isna(row['entities']):
+                    try:
+                        # 尝试解析JSON格式的实体
+                        entities_str = row['entities']
+                        print(f"原始实体数据: {entities_str[:100]}...")  # 打印前100个字符用于调试
+                        
+                        # 尝试多种可能的格式
+                        try:
+                            entities = json.loads(entities_str)
+                        except:
+                            # 如果不是标准JSON，尝试其他格式
+                            if isinstance(entities_str, str) and ',' in entities_str:
+                                # 可能是逗号分隔的实体列表
+                                all_entities = [e.strip() for e in entities_str.split(',')]
+                                entities = {'person': all_entities, 'place': [], 'organization': []}
+                    except Exception as e:
+                        print(f"解析实体信息失败: {e}")
+                        print(f"实体数据: {entities_str}")
+                
+                # 检查实体字典中是否有标准字段，如果没有，尝试其他可能的字段名
+                per_entities = []
+                loc_entities = []
+                org_entities = []
+                
+                # 尝试标准字段名
+                if isinstance(entities, dict):
+                    per_entities = entities.get('person', entities.get('PER', []))
+                    loc_entities = entities.get('place', entities.get('LOC', []))
+                    org_entities = entities.get('organization', entities.get('ORG', []))
+                
+                # 如果是列表，假设全部是人名实体
+                elif isinstance(entities, list):
+                    per_entities = entities
+                
+                # 如果是字符串，尝试分割
+                elif isinstance(entities, str):
+                    per_entities = [e.strip() for e in entities.split(',') if e.strip()]
+                
+                article['entities'] = {
+                    'person': per_entities,
+                    'place': loc_entities,
+                    'organization': org_entities
+                }
+                
+                # 计算实体总数
+                entity_count = len(per_entities) + len(loc_entities) + len(org_entities)
+                stats['total_entities'] += entity_count
+                
+                # 获取三元组信息
+                triples_data = row.get('triples', '[]')
+                if pd.isna(triples_data):
+                    triples_data = '[]'
+                    
+                # 尝试解析三元组
                 try:
-                    entities = json.loads(row['entities'])
-                    print(f"实体数据类型: {type(entities)}, 内容: {entities}")
+                    # 尝试多种可能的格式
+                    if isinstance(triples_data, str):
+                        if triples_data.startswith('[') and triples_data.endswith(']'):
+                            # 标准JSON格式
+                            triples = parse_triples(triples_data)
+                        elif ';' in triples_data:
+                            # 分号分隔的三元组
+                            triples = []
+                            for triple_str in triples_data.split(';'):
+                                parts = [p.strip() for p in triple_str.split(',')]
+                                if len(parts) >= 3:
+                                    triples.append({
+                                        'subject': parts[0],
+                                        'predicate': parts[1],
+                                        'object': parts[2]
+                                    })
+                        else:
+                            # 可能是逗号分隔的单个三元组
+                            parts = [p.strip() for p in triples_data.split(',')]
+                            if len(parts) >= 3:
+                                triples = [{
+                                    'subject': parts[0],
+                                    'predicate': parts[1],
+                                    'object': parts[2]
+                                }]
+                            else:
+                                triples = []
+                    else:
+                        triples = []
                 except Exception as e:
-                    print(f"解析实体信息失败: {e}")
-                    print(f"实体数据: {row['entities']}")
-            
-            # 根据我们生成的CSV文件中的实体类型进行映射
-            loc_entities = entities.get('LOC', [])
-            per_entities = entities.get('PER', [])
-            org_entities = entities.get('ORG', [])
-            
-            article['entities'] = {
-                'person': per_entities,
-                'place': loc_entities,
-                'organization': org_entities
-            }
-            
-            stats['total_entities'] += len(per_entities) + len(loc_entities) + len(org_entities)
-            
-            # 获取三元组信息
-            triples_data = row.get('triples', '[]')
-            if pd.isna(triples_data):
-                triples_data = '[]'
-            triples = parse_triples(triples_data)
-            article['triples'] = triples
-            stats['total_triples'] += len(triples)
+                    print(f"解析三元组失败: {e}")
+                    print(f"三元组数据: {triples_data}")
+                    triples = []
+                
+                article['triples'] = triples
+                stats['total_triples'] += len(triples)
             
             articles.append(article)
     
@@ -866,23 +1021,156 @@ def article_detail(article_id):
     
     article = df.iloc[article_id].to_dict()
     
-    # 处理关键词
-    if 'keywords' in article and not pd.isna(article['keywords']):
-        article['keywords'] = article['keywords'].split(',')
-    else:
+    # 检查是否是电影数据
+    is_movie_data = 'movie_title' in df.columns or 'directors' in df.columns or 'actors' in df.columns
+    
+    if is_movie_data:
+        # 处理电影数据
+        # 标题处理
+        if 'title' not in article or pd.isna(article['title']):
+            article['title'] = article.get('movie_title', '未知标题')
+        
+        # 处理关键词（使用电影类型作为关键词）
         article['keywords'] = []
-    
-    # 处理实体
-    if 'entities' in article and not pd.isna(article['entities']):
-        try:
-            article['entities'] = json.loads(article['entities'])
-        except:
-            article['entities'] = {'person': [], 'place': [], 'organization': []}
+        if 'genres' in article and not pd.isna(article['genres']):
+            article['keywords'] = [g.strip() for g in str(article['genres']).split(',') if g.strip()]
+        
+        # 处理实体
+        entities = {'person': [], 'place': [], 'organization': []}
+        
+        # 导演作为人物实体
+        if 'directors' in article and not pd.isna(article['directors']):
+            directors = str(article['directors']).split(',')
+            entities['person'].extend([d.strip() for d in directors if d.strip()])
+        
+        # 演员作为人物实体
+        if 'actors' in article and not pd.isna(article['actors']):
+            actors = str(article['actors']).split(',')
+            entities['person'].extend([a.strip() for a in actors if a.strip()])
+        
+        # 电影类型作为组织实体
+        if 'genres' in article and not pd.isna(article['genres']):
+            genres = str(article['genres']).split(',')
+            entities['organization'].extend([g.strip() for g in genres if g.strip()])
+        
+        article['entities'] = entities
+        
+        # 创建电影相关的三元组
+        triples = []
+        
+        # 导演关系
+        if 'directors' in article and not pd.isna(article['directors']):
+            directors = str(article['directors']).split(',')
+            for director in directors:
+                director = director.strip()
+                if director:
+                    triples.append({
+                        'subject': director,
+                        'predicate': '导演',
+                        'object': article['title']
+                    })
+        
+        # 演员关系
+        if 'actors' in article and not pd.isna(article['actors']):
+            actors = str(article['actors']).split(',')
+            for actor in actors:
+                actor = actor.strip()
+                if actor:
+                    triples.append({
+                        'subject': actor,
+                        'predicate': '出演',
+                        'object': article['title']
+                    })
+        
+        # 类型关系
+        if 'genres' in article and not pd.isna(article['genres']):
+            genres = str(article['genres']).split(',')
+            for genre in genres:
+                genre = genre.strip()
+                if genre:
+                    triples.append({
+                        'subject': article['title'],
+                        'predicate': '属于',
+                        'object': genre
+                    })
+        
+        article['triples'] = triples
     else:
-        article['entities'] = {'person': [], 'place': [], 'organization': []}
-    
-    # 处理三元组
-    article['triples'] = parse_triples(article.get('triples', '[]'))
+        # 处理普通文章数据
+        # 处理关键词
+        if 'keywords' in article and not pd.isna(article['keywords']):
+            article['keywords'] = article['keywords'].split(',')
+        else:
+            article['keywords'] = []
+        
+        # 处理实体
+        entities = {'person': [], 'place': [], 'organization': []}
+        if 'entities' in article and not pd.isna(article['entities']):
+            try:
+                # 尝试解析JSON格式的实体
+                entities_str = article['entities']
+                
+                # 尝试多种可能的格式
+                try:
+                    parsed_entities = json.loads(entities_str)
+                    if isinstance(parsed_entities, dict):
+                        # 尝试标准字段名
+                        entities['person'] = parsed_entities.get('person', parsed_entities.get('PER', []))
+                        entities['place'] = parsed_entities.get('place', parsed_entities.get('LOC', []))
+                        entities['organization'] = parsed_entities.get('organization', parsed_entities.get('ORG', []))
+                    elif isinstance(parsed_entities, list):
+                        # 如果是列表，假设全部是人名实体
+                        entities['person'] = parsed_entities
+                except:
+                    # 如果不是标准JSON，尝试其他格式
+                    if isinstance(entities_str, str) and ',' in entities_str:
+                        # 可能是逗号分隔的实体列表
+                        all_entities = [e.strip() for e in entities_str.split(',') if e.strip()]
+                        entities['person'] = all_entities
+            except Exception as e:
+                print(f"解析实体信息失败: {e}")
+        
+        article['entities'] = entities
+        
+        # 处理三元组
+        try:
+            triples_data = article.get('triples', '[]')
+            if pd.isna(triples_data):
+                triples_data = '[]'
+                
+            # 尝试多种可能的格式
+            if isinstance(triples_data, str):
+                if triples_data.startswith('[') and triples_data.endswith(']'):
+                    # 标准JSON格式
+                    article['triples'] = parse_triples(triples_data)
+                elif ';' in triples_data:
+                    # 分号分隔的三元组
+                    triples = []
+                    for triple_str in triples_data.split(';'):
+                        parts = [p.strip() for p in triple_str.split(',')]
+                        if len(parts) >= 3:
+                            triples.append({
+                                'subject': parts[0],
+                                'predicate': parts[1],
+                                'object': parts[2]
+                            })
+                    article['triples'] = triples
+                else:
+                    # 可能是逗号分隔的单个三元组
+                    parts = [p.strip() for p in triples_data.split(',')]
+                    if len(parts) >= 3:
+                        article['triples'] = [{
+                            'subject': parts[0],
+                            'predicate': parts[1],
+                            'object': parts[2]
+                        }]
+                    else:
+                        article['triples'] = []
+            else:
+                article['triples'] = []
+        except Exception as e:
+            print(f"解析三元组失败: {e}")
+            article['triples'] = []
     
     return render_template('article.html', article=article, article_id=article_id)
 
@@ -899,10 +1187,95 @@ def article_graph(article_id):
         return "文章不存在", 404
     
     article = df.iloc[article_id].to_dict()
+    
+    # 标题处理
+    if 'title' not in article or pd.isna(article['title']):
+        article['title'] = article.get('movie_title', f'文章 {article_id}')
+    
     title = article.get('title', f'文章 {article_id}')
     
+    # 检查是否是电影数据
+    is_movie_data = 'movie_title' in df.columns or 'directors' in df.columns or 'actors' in df.columns
+    
     # 获取三元组
-    triples = parse_triples(article.get('triples', '[]'))
+    if is_movie_data:
+        # 处理电影数据
+        triples = []
+        
+        # 导演关系
+        if 'directors' in article and not pd.isna(article['directors']):
+            directors = str(article['directors']).split(',')
+            for director in directors:
+                director = director.strip()
+                if director:
+                    triples.append({
+                        'subject': director,
+                        'predicate': '导演',
+                        'object': title
+                    })
+        
+        # 演员关系
+        if 'actors' in article and not pd.isna(article['actors']):
+            actors = str(article['actors']).split(',')
+            for actor in actors:
+                actor = actor.strip()
+                if actor:
+                    triples.append({
+                        'subject': actor,
+                        'predicate': '出演',
+                        'object': title
+                    })
+        
+        # 类型关系
+        if 'genres' in article and not pd.isna(article['genres']):
+            genres = str(article['genres']).split(',')
+            for genre in genres:
+                genre = genre.strip()
+                if genre:
+                    triples.append({
+                        'subject': title,
+                        'predicate': '属于',
+                        'object': genre
+                    })
+    else:
+        # 处理普通文章数据
+        try:
+            triples_data = article.get('triples', '[]')
+            if pd.isna(triples_data):
+                triples_data = '[]'
+                
+            # 尝试多种可能的格式
+            if isinstance(triples_data, str):
+                if triples_data.startswith('[') and triples_data.endswith(']'):
+                    # 标准JSON格式
+                    triples = parse_triples(triples_data)
+                elif ';' in triples_data:
+                    # 分号分隔的三元组
+                    triples = []
+                    for triple_str in triples_data.split(';'):
+                        parts = [p.strip() for p in triple_str.split(',')]
+                        if len(parts) >= 3:
+                            triples.append({
+                                'subject': parts[0],
+                                'predicate': parts[1],
+                                'object': parts[2]
+                            })
+                else:
+                    # 可能是逗号分隔的单个三元组
+                    parts = [p.strip() for p in triples_data.split(',')]
+                    if len(parts) >= 3:
+                        triples = [{
+                            'subject': parts[0],
+                            'predicate': parts[1],
+                            'object': parts[2]
+                        }]
+                    else:
+                        triples = []
+            else:
+                triples = []
+        except Exception as e:
+            print(f"解析三元组失败: {e}")
+            triples = []
     
     # 生成图表
     graph = generate_relation_graph(triples)
@@ -926,9 +1299,92 @@ def full_graph():
     all_triples = []
     
     if not df.empty:
+        # 检查是否是电影数据
+        is_movie_data = 'movie_title' in df.columns or 'directors' in df.columns or 'actors' in df.columns
+        
         for _, row in df.iterrows():
-            triples = parse_triples(row.get('triples', '[]'))
-            all_triples.extend(triples)
+            if is_movie_data:
+                # 处理电影数据
+                # 标题处理
+                title = row.get('title', row.get('movie_title', '未知标题'))
+                if pd.isna(title):
+                    title = '未知标题'
+                
+                # 导演关系
+                if 'directors' in row and not pd.isna(row['directors']):
+                    directors = str(row['directors']).split(',')
+                    for director in directors:
+                        director = director.strip()
+                        if director:
+                            all_triples.append({
+                                'subject': director,
+                                'predicate': '导演',
+                                'object': title
+                            })
+                
+                # 演员关系
+                if 'actors' in row and not pd.isna(row['actors']):
+                    actors = str(row['actors']).split(',')
+                    for actor in actors:
+                        actor = actor.strip()
+                        if actor:
+                            all_triples.append({
+                                'subject': actor,
+                                'predicate': '出演',
+                                'object': title
+                            })
+                
+                # 类型关系
+                if 'genres' in row and not pd.isna(row['genres']):
+                    genres = str(row['genres']).split(',')
+                    for genre in genres:
+                        genre = genre.strip()
+                        if genre:
+                            all_triples.append({
+                                'subject': title,
+                                'predicate': '属于',
+                                'object': genre
+                            })
+            else:
+                # 处理普通文章数据
+                try:
+                    triples_data = row.get('triples', '[]')
+                    if pd.isna(triples_data):
+                        continue
+                        
+                    # 尝试多种可能的格式
+                    if isinstance(triples_data, str):
+                        if triples_data.startswith('[') and triples_data.endswith(']'):
+                            # 标准JSON格式
+                            triples = parse_triples(triples_data)
+                        elif ';' in triples_data:
+                            # 分号分隔的三元组
+                            triples = []
+                            for triple_str in triples_data.split(';'):
+                                parts = [p.strip() for p in triple_str.split(',')]
+                                if len(parts) >= 3:
+                                    triples.append({
+                                        'subject': parts[0],
+                                        'predicate': parts[1],
+                                        'object': parts[2]
+                                    })
+                        else:
+                            # 可能是逗号分隔的单个三元组
+                            parts = [p.strip() for p in triples_data.split(',')]
+                            if len(parts) >= 3:
+                                triples = [{
+                                    'subject': parts[0],
+                                    'predicate': parts[1],
+                                    'object': parts[2]
+                                }]
+                            else:
+                                triples = []
+                    else:
+                        triples = []
+                        
+                    all_triples.extend(triples)
+                except Exception as e:
+                    print(f"解析三元组失败: {e}")
     
     # 生成图表
     graph = generate_relation_graph(all_triples)
@@ -1198,17 +1654,86 @@ def api_triples_analysis():
     return jsonify(result)
 
 
+@app.route('/debug')
+def debug_data():
+    """
+    调试数据格式
+    """
+    data_file = request.args.get('file', DEFAULT_DATA_PATH)
+    df = load_data(data_file)
+    
+    if df.empty:
+        return "无数据可分析", 404
+    
+    # 获取前5篇文章的数据
+    sample_data = []
+    for i in range(min(5, len(df))):
+        article = df.iloc[i].to_dict()
+        
+        # 获取实体和三元组的原始格式
+        entities_raw = article.get('entities', '')
+        triples_raw = article.get('triples', '')
+        
+        # 尝试解析实体
+        entities_parsed = "解析失败"
+        try:
+            if isinstance(entities_raw, str) and entities_raw:
+                if entities_raw.startswith('{') and entities_raw.endswith('}'):
+                    entities_parsed = json.loads(entities_raw)
+                else:
+                    entities_parsed = entities_raw
+        except:
+            pass
+        
+        # 尝试解析三元组
+        triples_parsed = "解析失败"
+        try:
+            if isinstance(triples_raw, str) and triples_raw:
+                if triples_raw.startswith('[') and triples_raw.endswith(']'):
+                    triples_parsed = json.loads(triples_raw)
+                else:
+                    triples_parsed = triples_raw
+        except:
+            pass
+        
+        sample_data.append({
+            'title': article.get('title', f'文章 {i}'),
+            'entities_raw': str(entities_raw)[:200] + ('...' if len(str(entities_raw)) > 200 else ''),
+            'entities_type': type(entities_raw).__name__,
+            'entities_parsed': str(entities_parsed)[:200] + ('...' if len(str(entities_parsed)) > 200 else ''),
+            'triples_raw': str(triples_raw)[:200] + ('...' if len(str(triples_raw)) > 200 else ''),
+            'triples_type': type(triples_raw).__name__,
+            'triples_parsed': str(triples_parsed)[:200] + ('...' if len(str(triples_parsed)) > 200 else '')
+        })
+    
+    # 获取列名
+    columns = list(df.columns)
+    
+    return render_template(
+        'debug.html',
+        sample_data=sample_data,
+        columns=columns,
+        file_path=data_file
+    )
+
+
 if __name__ == '__main__':
     # 解析命令行参数
     parser = argparse.ArgumentParser(description='文章分析可视化应用')
-    parser.add_argument('--file', '-f', help='CSV数据文件路径', default=DEFAULT_DATA_PATH)
-    parser.add_argument('--port', '-p', type=int, help='服务器端口', default=5000)
-    parser.add_argument('--host', help='服务器主机', default='0.0.0.0')
+    parser.add_argument('--data', type=str, default=DEFAULT_DATA_PATH,
+                        help='数据文件路径，默认为 ' + DEFAULT_DATA_PATH)
+    parser.add_argument('--host', type=str, default='0.0.0.0',
+                        help='服务器主机，默认为 0.0.0.0')
+    parser.add_argument('--port', type=int, default=5000,
+                        help='服务器端口，默认为 5000')
     args = parser.parse_args()
     
-    # 更新默认数据文件路径
-    print(f"使用数据文件: {args.file}")
-    DEFAULT_DATA_PATH = args.file
+    # 设置数据文件路径
+    data_path = args.data
+    print(f"使用数据文件: {data_path}")
+    
+    # 预加载数据
+    df = load_data(data_path)
     
     # 启动应用
     app.run(debug=True, host=args.host, port=args.port) 
